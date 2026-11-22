@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# 推送前本地 CI：与 GitHub Actions 保持同一套核心检查。
+# 应急跳过：git push --no-verify
+set -euo pipefail
+
+echo '== 本地 CI: pre-push =='
+exec npm run ci:local

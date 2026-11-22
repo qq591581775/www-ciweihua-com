@@ -1,0 +1,242 @@
+export type ListEntry = {
+  flower: string
+  quantity: string
+  reason: string
+}
+
+export type ListSection = {
+  heading: string
+  note: string
+  items: ListEntry[]
+}
+
+export type FlowerList = {
+  slug: string
+  title: string
+  description: string
+  scene: string
+  budget: string
+  date: string
+  updated: string
+  intro: string
+  sections: ListSection[]
+  closing: string
+}
+
+export const lists: FlowerList[] = [
+  {
+    slug: 'first-bouquet',
+    title: '第一次买花，150 元以内怎么配',
+    description:
+      '预算不多又不想买得寒酸，关键是把钱花在主花上：3–5 支主花、一把配花、两枝叶材，就够撑起一束。',
+    scene: '第一次自己买花',
+    budget: '100–150 元',
+    date: '2026-11-22',
+    updated: '2026-11-22',
+    intro:
+      '第一次买花最容易犯的错，是配花买太多、主花买太少，最后看起来像一堆草。花店的花束之所以饱满，靠的是层次，不是数量。这个配法适合送朋友、送自己，也适合练手。',
+    sections: [
+      {
+        heading: '主花：3–5 支，决定整束的气质',
+        note: '主花选一种就够了，同色同材比混搭更稳。',
+        items: [
+          {
+            flower: 'eustoma',
+            quantity: '3 支',
+            reason: '花瓣柔和、颜色不挑人，三支就能撑起主视觉，比玫瑰便宜。',
+          },
+          {
+            flower: 'rose',
+            quantity: '5 支',
+            reason: '想要更明确的“送花感”就选玫瑰，香槟或浅粉比大红更好搭。',
+          },
+        ],
+      },
+      {
+        heading: '配花：一把就够，不要超过主花',
+        note: '配花负责蓬松和过渡，数量上不要压过主花。',
+        items: [
+          {
+            flower: 'baby-breath',
+            quantity: '半扎',
+            reason: '最通用的填充花，半扎就能让花束看起来大一圈。',
+          },
+          {
+            flower: 'daisy',
+            quantity: '3–5 支',
+            reason: '想更轻松、更日常，用小雏菊代替满天星，颜色更活泼。',
+          },
+        ],
+      },
+      {
+        heading: '叶材：两枝，负责“呼吸感”',
+        note: '叶材不要塞满，留一点空隙反而高级。',
+        items: [
+          {
+            flower: 'eucalyptus',
+            quantity: '2 枝',
+            reason: '银绿色几乎配任何花，耐放，剩下的还能干插。',
+          },
+        ],
+      },
+    ],
+    closing:
+      '包装尽量选素色纸，别加太多纱和丝带。钱花在花上，照片和实物都会更好看。第一次买，建议去能单支挑的花店，不要买配好的“套餐花束”。',
+  },
+  {
+    slug: 'desk-week',
+    title: '办公桌一周花清单：不用天天换水',
+    description:
+      '工位上放花，重点是耐放、低香、不占地方。这份清单按 5 个工作日算，周一插上，周五还在。',
+    scene: '办公桌与工位',
+    budget: '60–120 元',
+    date: '2026-11-22',
+    updated: '2026-11-22',
+    intro:
+      '办公室不适合浓香和大体量，也不适合每天要伺候的花。选耐放、茎硬、低香的组合，一个小瓶就能撑一周。',
+    sections: [
+      {
+        heading: '主力：能放五天以上的花',
+        note: '办公桌没有时间天天换水，耐放是第一位。',
+        items: [
+          {
+            flower: 'carnation',
+            quantity: '3 支',
+            reason: '最常见的“超长待机”花材，养得好能开十天以上，低香不打扰同事。',
+          },
+          {
+            flower: 'eustoma',
+            quantity: '2 支',
+            reason: '比康乃馨更轻盈，浅色系放在显示器旁边很舒服。',
+          },
+        ],
+      },
+      {
+        heading: '点缀：小体量、不乱掉',
+        note: '工位空间小，点缀花不要选容易掉瓣的。',
+        items: [
+          {
+            flower: 'daisy',
+            quantity: '3 支',
+            reason: '便宜、耐放，小小一朵就能让桌面不那么“办公”。',
+          },
+          {
+            flower: 'eucalyptus',
+            quantity: '1–2 枝',
+            reason: '叶材比花更耐放，还能压住整体的颜色。',
+          },
+        ],
+      },
+    ],
+    closing:
+      '用一个 15–20 cm 高的窄口瓶，水位 1/3。周一剪一次，周三换一次水，周五基本还能看。别选百合和香水百合，办公室的密闭空间里香味会变成负担。',
+  },
+  {
+    slug: 'visit-patient',
+    title: '探病送花清单：别送错，也别添麻烦',
+    description:
+      '探病花束的第一原则是不添麻烦：低香、低花粉、体量小、颜色柔和，最好对方不用再找花瓶。',
+    scene: '医院与家中休养',
+    budget: '80–200 元',
+    date: '2026-11-22',
+    updated: '2026-11-22',
+    intro:
+      '病房空间小、通风有限，浓香和花粉都比平时更需要回避。另外，很多医院明确不允许带花进病房，出发前先问清楚，比买什么花更重要。',
+    sections: [
+      {
+        heading: '可以送：低香、低花粉',
+        note: '颜色选浅色，别让花比病人更抢眼。',
+        items: [
+          {
+            flower: 'carnation',
+            quantity: '5 支',
+            reason: '低香、耐放，浅粉色最稳妥，也符合“祝早日康复”的语义。',
+          },
+          {
+            flower: 'eustoma',
+            quantity: '3 支',
+            reason: '没有明显香气，花型柔和，放在床头柜不压迫。',
+          },
+          {
+            flower: 'daisy',
+            quantity: '3–5 支',
+            reason: '小体量、颜色轻快，适合家中休养的场景。',
+          },
+        ],
+      },
+      {
+        heading: '不要送：浓香、花粉、语义不对',
+        note: '这几类在探病场景里几乎是硬性避雷。',
+        items: [
+          {
+            flower: 'lily',
+            quantity: '不建议',
+            reason: '香味浓、花粉多，密闭病房里很容易让人不适。',
+          },
+          {
+            flower: 'rose',
+            quantity: '不建议',
+            reason: '红玫瑰语义偏私人，探病场合容易尴尬。',
+          },
+        ],
+      },
+    ],
+    closing:
+      '如果医院不允许送花，水果、绿植或一本轻松的书都更合适。送花是表达关心，不是完成一个任务。',
+  },
+  {
+    slug: 'wedding-bouquet',
+    title: '手捧花搭配清单：轻一点，稳一点',
+    description:
+      '手捧花要举一整天，重量、耐久和上镜同样重要。这份搭配按“单手能举、四小时不蔫”来选。',
+    scene: '婚礼与领证',
+    budget: '300–600 元',
+    date: '2026-11-22',
+    updated: '2026-11-22',
+    intro:
+      '很多人挑手捧花只看照片，结果现场举十分钟就手酸。手捧花的直径控制在 25–30 cm，重量控制在一瓶矿泉水的量级，才撑得住整场仪式。',
+    sections: [
+      {
+        heading: '主花：两种以内，颜色统一',
+        note: '主花越多越容易乱，两种已经足够。',
+        items: [
+          {
+            flower: 'rose',
+            quantity: '9–11 支',
+            reason: '最稳的选择，花型饱满、上镜，颜色可以跟婚纱或场地呼应。',
+          },
+          {
+            flower: 'peony',
+            quantity: '5–7 支',
+            reason: '春夏婚礼的首选，一朵就很有存在感，但要注意花期和脱水。',
+          },
+          {
+            flower: 'ranunculus',
+            quantity: '7–9 支',
+            reason: '颜色饱和、层次细，适合想要一点亮色又不想太传统的新娘。',
+          },
+        ],
+      },
+      {
+        heading: '配花与叶材：各一把，别塞满',
+        note: '留一点空隙，照片里的花才不像一坨。',
+        items: [
+          {
+            flower: 'baby-breath',
+            quantity: '半扎',
+            reason: '让花束边缘轻起来，也方便调整轮廓。',
+          },
+          {
+            flower: 'eucalyptus',
+            quantity: '2–3 枝',
+            reason: '银绿色压住整体色调，比满天星更有质感。',
+          },
+        ],
+      },
+    ],
+    closing:
+      '婚礼前一天一定试做一束，举着走两分钟，感受重量和握感。夏季户外婚礼准备第二束备用，绣球虽然好看，但脱水太快，户外慎用。',
+  },
+]
+
+export const getList = (slug: string) => lists.find((list) => list.slug === slug)
