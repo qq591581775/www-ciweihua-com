@@ -58,7 +58,7 @@ usePageSeo({
 <template>
   <div>
     <section class="page-header">
-      <div class="container">
+      <div class="narrow container">
         <nav class="breadcrumb" aria-label="面包屑">
           <NuxtLink to="/">首页</NuxtLink>
           <span>/</span>
