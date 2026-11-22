@@ -71,7 +71,8 @@ npm run ci:local        # 手动执行
 - 主分支 `main`，部署路径 `/www/wwwroot/www.ciweihua.com`，站点根 `dist`。
 - `buildId` 由源码内容哈希生成，构建时间戳归一化，重复生成不会产生无意义 diff。
 - 站内规范 URL 带尾斜杠。
-- GitHub Actions 的 `verify` 通过后才会调用服务器上的 `webhook.sh`；服务器只部署指定提交。
+- GitHub Actions 只做校验（`verify`），推送不会自动部署；部署在服务器上手动执行。
+- 需要时可手动触发 `CI` 工作流（`workflow_dispatch`），`deploy` 任务才会调用服务器上的 `webhook.sh`。
 
 服务器上手动执行：
 
@@ -79,7 +80,7 @@ npm run ci:local        # 手动执行
 bash /www/wwwroot/www.ciweihua.com/webhook.sh
 ```
 
-Actions 部署时传入精确提交：
+手动触发 Actions 部署时，任务会传入精确提交：
 
 ```bash
 DEPLOY_SHA=<commit-sha> bash /www/wwwroot/www.ciweihua.com/webhook.sh
@@ -114,7 +115,7 @@ location / {
 error_page 404 /404.html;
 ```
 
-### GitHub Actions Secrets
+### GitHub Actions Secrets（仅手动触发部署时需要）
 
 ```text
 DEPLOY_HOST
