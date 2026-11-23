@@ -167,9 +167,19 @@ ASSET_PATH="$(grep -oE '(src|href)="[^"]+\.(js|css)"' "$WEB_ROOT/index.html" 2>/
 
 if command -v curl >/dev/null 2>&1; then
   BASE="${SITE_URL%/}"
+  # 首次上线或证书刚生效时，Nginx/HTTPS 可能还没就绪，先给站点最多 30 秒启动时间。
+  site_ready=""
+  for _ in 1 2 3 4 5 6 7 8 9 10; do
+    code="$(curl -s -o /dev/null -m 10 -w '%{http_code}' "$BASE/" 2>/dev/null)" || code=000
+    [ "${code:-}" = "200" ] && { site_ready=1; break; }
+    sleep 3
+  done
+  [ -n "$site_ready" ] || log "WARN: 站点首页暂未响应，继续逐个检查"
+
   health_fail=""
   for path in "${health_paths[@]}"; do
-    code="$(curl -s -o /dev/null -m 10 -w '%{http_code}' "$BASE$path" 2>/dev/null || echo 000)"
+    code="$(curl -s -o /dev/null -m 10 -w '%{http_code}' "$BASE$path" 2>/dev/null)" || code=000
+    [ -n "${code:-}" ] || code=000
     [ "$code" = "200" ] || health_fail="$health_fail ${path}(${code})"
   done
 
