@@ -101,6 +101,8 @@ die() {
 # ---------- 检查仓库和产物 ----------
 [ -d "$REPO_ROOT/.git" ] || die "不是 Git 仓库：$REPO_ROOT"
 cd "$REPO_ROOT" || die "无法进入仓库：$REPO_ROOT"
+# 宝塔/面板可能改写文件权限，忽略执行位差异，避免 merge 被未提交改动挡住。
+git config core.fileMode false
 
 log "仓库：$REPO_ROOT"
 log "站点根：$WEB_ROOT"

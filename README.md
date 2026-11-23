@@ -69,6 +69,7 @@ npm run ci:local        # 手动执行
 ## 部署
 
 - 主分支 `main`，部署路径 `/www/wwwroot/www.ciweihua.com`，站点根 `dist`。
+- `webhook.sh` 会自动设置 `core.fileMode=false`，面板改过文件权限也不会卡住 `git merge`。
 - `buildId` 由源码内容哈希生成，构建时间戳归一化，重复生成不会产生无意义 diff。
 - 站内规范 URL 带尾斜杠。
 - GitHub Actions 只做校验（`verify`），推送不会自动部署；部署在服务器上手动执行。
