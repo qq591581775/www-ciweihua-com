@@ -2,8 +2,8 @@
 @config '../../../tailwind.config.ts';
 
 :root {
-  --color-paper: #f8f9f4;
-  --color-surface: #eef3e8;
+  --color-paper: #ffffff;
+  --color-surface: #f5f8f1;
   --color-card: #ffffff;
   --color-text: #1e261c;
   --color-muted: #68725f;
@@ -114,7 +114,7 @@ p {
   top: 0;
   z-index: 20;
   border-bottom: 1px solid var(--color-border);
-  background: rgba(248, 249, 244, 0.88);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
 }
 
@@ -202,9 +202,7 @@ p {
   padding: 84px 0 68px;
   border-bottom: 1px solid var(--color-border);
   background:
-    radial-gradient(58% 70% at 92% 4%, rgba(63, 122, 61, 0.13), transparent 68%),
-    radial-gradient(40% 60% at 0% 96%, rgba(200, 168, 120, 0.1), transparent 70%),
-    var(--color-paper);
+    radial-gradient(58% 70% at 92% 4%, rgba(63, 122, 61, 0.1), transparent 68%), var(--color-paper);
 }
 
 .hero-grid {
