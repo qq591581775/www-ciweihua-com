@@ -1,135 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ciweihua.com/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/flowers/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/flowers/rose/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ciweihua.com/images/flowers/rose.jpg</image:loc>
+      <image:title>玫瑰</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ciweihua.com/flowers/eustoma/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ciweihua.com/images/flowers/eustoma.jpg</image:loc>
+      <image:title>洋桔梗</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ciweihua.com/flowers/tulip/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ciweihua.com/images/flowers/tulip.jpg</image:loc>
+      <image:title>郁金香</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ciweihua.com/flowers/sunflower/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ciweihua.com/images/flowers/sunflower.jpg</image:loc>
+      <image:title>向日葵</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ciweihua.com/flowers/hydrangea/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ciweihua.com/images/flowers/hydrangea.jpg</image:loc>
+      <image:title>绣球</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ciweihua.com/flowers/lily/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ciweihua.com/images/flowers/lily.jpg</image:loc>
+      <image:title>百合</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ciweihua.com/flowers/carnation/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ciweihua.com/images/flowers/carnation.jpg</image:loc>
+      <image:title>康乃馨</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ciweihua.com/flowers/peony/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ciweihua.com/images/flowers/peony.jpg</image:loc>
+      <image:title>芍药</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ciweihua.com/flowers/ranunculus/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ciweihua.com/images/flowers/ranunculus.jpg</image:loc>
+      <image:title>洋牡丹</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ciweihua.com/flowers/baby-breath/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ciweihua.com/images/flowers/baby-breath.jpg</image:loc>
+      <image:title>满天星</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ciweihua.com/flowers/daisy/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ciweihua.com/images/flowers/daisy.jpg</image:loc>
+      <image:title>雏菊</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ciweihua.com/flowers/eucalyptus/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ciweihua.com/images/flowers/eucalyptus.jpg</image:loc>
+      <image:title>尤加利叶</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ciweihua.com/occasions/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/occasions/confession/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/occasions/birthday/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/occasions/visit/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/occasions/business/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/occasions/wedding/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/occasions/festival/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/lists/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/lists/first-bouquet/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/lists/desk-week/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/lists/visit-patient/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/lists/wedding-bouquet/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/guides/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/guides/keep-flowers-longer/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/guides/judge-freshness/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/guides/vase-and-water/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/guides/seasonal-calendar/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/about/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.ciweihua.com/contact/</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

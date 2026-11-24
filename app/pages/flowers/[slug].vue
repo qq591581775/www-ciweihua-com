@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { getFlower } from '~/data/flowers'
+import { guides } from '~/data/guides'
+import { lists } from '~/data/lists'
 import { getOccasion } from '~/data/occasions'
 import { site } from '~/data/site'
 
@@ -20,10 +22,39 @@ const relatedOccasions = flower.occasions.flatMap((slug) => {
   return item ? [item] : []
 })
 
+const faqs = buildFlowerFaq(flower)
+const keywords = buildFlowerKeywords(flower)
+
+const relatedLists = lists
+  .filter((list) =>
+    list.sections.some((section) => section.items.some((item) => item.flower === flower.slug)),
+  )
+  .slice(0, 2)
+
+const matchedGuides = guides.filter((guide) => {
+  const text = [
+    guide.title,
+    guide.description,
+    guide.summary,
+    ...guide.sections.flatMap((section) => [
+      section.heading,
+      ...section.paragraphs,
+      ...(section.points ?? []),
+    ]),
+  ].join(' ')
+  return text.includes(flower.name)
+})
+const relatedGuides = (matchedGuides.length > 0 ? matchedGuides : guides).slice(0, 2)
+
 usePageSeo({
   title: `${flower.name}的花语、花期与养护｜刺猬花`,
   description: `${flower.name}的花语、花期、参考价格、瓶插期与养护方法：${flower.summary}`,
   path: `/flowers/${flower.slug}/`,
+  image: flower.image,
+  imageAlt: flower.imageAlt,
+  imageWidth: flower.imageWidth,
+  imageHeight: flower.imageHeight,
+  keywords,
   type: 'article',
   publishedTime: '2026-11-22',
   modifiedTime: flower.updated,
@@ -39,6 +70,14 @@ usePageSeo({
       publisher: { '@type': 'Organization', name: site.name, url: `${site.url}/` },
       mainEntityOfPage: `${site.url}/flowers/${flower.slug}/`,
       inLanguage: 'zh-CN',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
     },
     {
       '@type': 'BreadcrumbList',
@@ -180,6 +219,54 @@ usePageSeo({
                 >
                   {{ item.name }}
                 </NuxtLink>
+              </div>
+            </div>
+
+            <div v-if="relatedLists.length > 0" class="detail-section">
+              <h2>相关搭配清单</h2>
+              <div class="index-list">
+                <article v-for="(item, index) in relatedLists" :key="item.slug" class="index-row">
+                  <span class="index-no">{{ String(index + 1).padStart(2, '0') }}</span>
+                  <div>
+                    <h3>
+                      <NuxtLink :to="`/lists/${item.slug}/`">{{ item.title }}</NuxtLink>
+                    </h3>
+                    <p>{{ item.description }}</p>
+                  </div>
+                  <div class="index-meta">
+                    <strong>{{ item.budget }}</strong>
+                    <span>{{ item.scene }}</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h2>继续读：养护指南</h2>
+              <div class="index-list">
+                <article v-for="(item, index) in relatedGuides" :key="item.slug" class="index-row">
+                  <span class="index-no">{{ String(index + 1).padStart(2, '0') }}</span>
+                  <div>
+                    <h3>
+                      <NuxtLink :to="`/guides/${item.slug}/`">{{ item.title }}</NuxtLink>
+                    </h3>
+                    <p>{{ item.description }}</p>
+                  </div>
+                  <div class="index-meta">
+                    <strong>{{ item.category }}</strong>
+                    <span>{{ item.readingTime }} 分钟</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h2>常见问题</h2>
+              <div class="faq-list">
+                <details v-for="item in faqs" :key="item.question" class="faq-item">
+                  <summary>{{ item.question }}</summary>
+                  <p>{{ item.answer }}</p>
+                </details>
               </div>
             </div>
 

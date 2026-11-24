@@ -1240,6 +1240,58 @@ p {
   font-size: 15px;
 }
 
+/* ---------- 相关阅读与常见问题 ---------- */
+.article-related {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--color-border);
+}
+
+.article-related h2 {
+  margin: 0 0 14px;
+  font-size: 21px;
+}
+
+.faq-list {
+  border-top: 1px solid var(--color-border);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-item summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  cursor: pointer;
+  font-size: 15.5px;
+  font-weight: 600;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  color: var(--color-muted);
+  font-weight: 400;
+}
+
+.faq-item[open] summary::after {
+  content: '−';
+}
+
+.faq-item p {
+  margin: 0 0 16px;
+  color: var(--color-muted);
+  font-size: 14.5px;
+  line-height: 1.9;
+}
+
 /* ---------- 页脚 ---------- */
 .site-footer {
   margin-top: 0;

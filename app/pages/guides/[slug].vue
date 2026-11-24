@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { flowers } from '~/data/flowers'
 import { formatGuideDate, getGuide } from '~/data/guides'
 import { site } from '~/data/site'
 
@@ -9,10 +10,34 @@ if (!guide) {
   throw createError({ statusCode: 404, statusMessage: '指南不存在' })
 }
 
+const guideText = [
+  guide.title,
+  guide.description,
+  guide.summary,
+  ...guide.sections.flatMap((section) => [
+    section.heading,
+    ...section.paragraphs,
+    ...(section.points ?? []),
+  ]),
+].join(' ')
+
+const matchedFlowers = flowers.filter((flower) => guideText.includes(flower.name))
+const relatedFlowers = (
+  matchedFlowers.length > 0 ? matchedFlowers : flowers.filter((flower) => flower.featured)
+).slice(0, 6)
+
+const keywords = [
+  guide.category,
+  '鲜花养护',
+  '买花指南',
+  ...guide.title.split(/[，、：]/).filter((part) => part.length > 1),
+]
+
 usePageSeo({
   title: `${guide.title}｜刺猬花`,
   description: guide.description,
   path: `/guides/${guide.slug}/`,
+  keywords,
   type: 'article',
   publishedTime: guide.date,
   modifiedTime: guide.updated,
@@ -79,6 +104,20 @@ usePageSeo({
               <li v-for="point in section.points" :key="point">{{ point }}</li>
             </ul>
           </section>
+        </div>
+
+        <div v-if="relatedFlowers.length > 0" class="article-related">
+          <h2>相关花材</h2>
+          <div class="chip-row">
+            <NuxtLink
+              v-for="item in relatedFlowers"
+              :key="item.slug"
+              :to="`/flowers/${item.slug}/`"
+              class="chip-link"
+            >
+              {{ item.name }}
+            </NuxtLink>
+          </div>
         </div>
 
         <div class="article-cta">

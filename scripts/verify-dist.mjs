@@ -153,12 +153,22 @@ for (const route of routes) {
     `${route} has no og:site_name`,
   )
   assert(html.includes('og:image'), `${route} has no og:image`)
-  assert(html.includes('og-image.jpg'), `${route} has no social image`)
   assert(html.includes('og:title'), `${route} has no og:title`)
   assert(html.includes('og:image:type'), `${route} has no og:image:type`)
   assert(html.includes('application/ld+json'), `${route} has no structured data`)
   assert(html.includes('og:image:alt'), `${route} has no og:image:alt`)
   assert(html.includes('刺猬花'), `${route} has no site name in the title or body`)
+  assert(
+    html.includes('name="robots" content="index,follow'),
+    `${route} has no index/follow robots meta`,
+  )
+
+  if (route.startsWith('/flowers/') && route !== '/flowers/') {
+    const slug = route.split('/')[2]
+    assert(html.includes(`"@type":"FAQPage"`), `${route} has no FAQ structured data`)
+    assert(html.includes(`/images/flowers/${slug}.jpg`), `${route} has no flower social image`)
+    assert(html.includes('name="keywords"'), `${route} has no keywords meta`)
+  }
 
   if (route === '/contact/') {
     assert(html.includes('mailto:591581775@qq.com'), `${route} has no contact email`)

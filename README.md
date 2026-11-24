@@ -66,6 +66,15 @@ npm run ci:local        # 手动执行
 
 `ci:local` 依次执行：工作区检查（`dist/` 除外）→ lint → 格式检查 → typecheck → 单测 → 静态生成并同步 `dist/` → `verify:dist` → 检查 `dist/` 是否与源码一致 → `webhook.sh` 语法检查。
 
+## SEO
+
+- 每页都有 `index,follow,max-image-preview:large` 的 robots 声明，404 页单独 noindex。
+- 花材详情页用花材图作为 OG / Twitter 分享图，并带图注、`Article`、`FAQPage` 与 `BreadcrumbList` 结构化数据。
+- 花材页按字段自动生成 4 条常见问题（价格、瓶插期、挑选、送人），页面可见内容与 FAQPage 保持同一份数据。
+- 站内互链：花材页指向相关清单与养护指南，指南页回链文中提到的花材。
+- `sitemap.xml` 带 `changefreq`、`priority` 与花材图片条目；`robots.txt` 带 `Host` 与 `Sitemap`。
+- `verify:dist` 会检查 robots、keywords、FAQPage 与花材分享图是否齐全。
+
 ## 部署
 
 - 主分支 `main`，部署路径 `/www/wwwroot/www.ciweihua.com`，站点根 `dist`。

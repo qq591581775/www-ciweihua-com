@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.ciweihua.com/sitemap.xml
+Host: www.ciweihua.com

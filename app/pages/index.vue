@@ -10,6 +10,7 @@ usePageSeo({
   description:
     '刺猬花汇总常见花材的花语、花期、参考价格与养护方法，按表白、生日、探病、商务、婚礼和节日整理选花判断，不卖花，只把选择讲清楚。',
   path: '/',
+  keywords: ['鲜花', '花材', '花语', '送花', '鲜花养护', '搭配清单', '刺猬花'],
   structuredData: [
     {
       '@type': 'CollectionPage',

@@ -6,6 +6,11 @@ type PageSeoOptions = {
   title: string
   description: string
   path: string
+  image?: string
+  imageAlt?: string
+  imageWidth?: number
+  imageHeight?: number
+  keywords?: string[]
   type?: 'website' | 'article'
   publishedTime?: string
   modifiedTime?: string
@@ -14,6 +19,7 @@ type PageSeoOptions = {
 
 export const usePageSeo = (options: PageSeoOptions) => {
   const url = new URL(options.path, site.url).toString()
+  const image = options.image ? new URL(options.image, site.url).toString() : SOCIAL_IMAGE
 
   useSeoMeta({
     title: options.title,
@@ -24,16 +30,17 @@ export const usePageSeo = (options: PageSeoOptions) => {
     ogUrl: url,
     ogSiteName: site.name,
     ogLocale: 'zh_CN',
-    ogImage: SOCIAL_IMAGE,
+    robots: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1',
+    ogImage: image,
     ogImageType: 'image/jpeg',
-    ogImageWidth: 1200,
-    ogImageHeight: 630,
-    ogImageAlt: '刺猬花｜鲜花的聚合平台',
+    ogImageWidth: options.imageWidth ?? 1200,
+    ogImageHeight: options.imageHeight ?? 630,
+    ogImageAlt: options.imageAlt ?? '刺猬花｜鲜花的聚合平台',
     twitterCard: 'summary_large_image',
     twitterTitle: options.title,
     twitterDescription: options.description,
-    twitterImage: SOCIAL_IMAGE,
-    twitterImageAlt: '刺猬花｜鲜花的聚合平台',
+    twitterImage: image,
+    twitterImageAlt: options.imageAlt ?? '刺猬花｜鲜花的聚合平台',
     ...(options.type === 'article'
       ? {
           articlePublishedTime: options.publishedTime,
@@ -44,6 +51,9 @@ export const usePageSeo = (options: PageSeoOptions) => {
 
   useHead({
     link: [{ rel: 'canonical', href: url }],
+    meta: options.keywords?.length
+      ? [{ name: 'keywords', content: options.keywords.join(',') }]
+      : [],
     script: [
       {
         type: 'application/ld+json',
