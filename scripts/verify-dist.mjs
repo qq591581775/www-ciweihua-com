@@ -56,6 +56,7 @@ async function discoverGeneratedRoutes(section) {
 const generatedDetailRoutes = [
   ...(await discoverGeneratedRoutes('flowers')),
   ...(await discoverGeneratedRoutes('occasions')),
+  ...(await discoverGeneratedRoutes('festivals')),
   ...(await discoverGeneratedRoutes('lists')),
   ...(await discoverGeneratedRoutes('guides')),
 ]
@@ -168,6 +169,12 @@ for (const route of routes) {
     assert(html.includes(`"@type":"FAQPage"`), `${route} has no FAQ structured data`)
     assert(html.includes(`/images/flowers/${slug}.jpg`), `${route} has no flower social image`)
     assert(html.includes('name="keywords"'), `${route} has no keywords meta`)
+  }
+
+  if (route.startsWith('/festivals/') && route !== '/festivals/') {
+    assert(html.includes(`"@type":"FAQPage"`), `${route} has no FAQ structured data`)
+    assert(html.includes('name="keywords"'), `${route} has no keywords meta`)
+    assert(html.includes('预算怎么分'), `${route} has no budget tiers`)
   }
 
   if (route === '/contact/') {

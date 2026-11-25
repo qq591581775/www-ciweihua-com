@@ -6,7 +6,7 @@ import FlowerCard from '~/components/FlowerCard.vue'
 import { flowers } from '~/data/flowers'
 
 describe('AppHeader', () => {
-  it('renders the brand and five navigation links', async () => {
+  it('renders the brand and six navigation links', async () => {
     const wrapper = await mountSuspended(AppHeader)
 
     expect(wrapper.text()).toContain('刺猬花')
@@ -16,12 +16,20 @@ describe('AppHeader', () => {
     expect(wrapper.find('.brand-mark').attributes('aria-hidden')).toBe('true')
 
     const links = wrapper.findAll('nav a')
-    expect(links).toHaveLength(5)
-    expect(links.map((link) => link.text())).toEqual(['首页', '花材', '场景', '清单', '指南'])
+    expect(links).toHaveLength(6)
+    expect(links.map((link) => link.text())).toEqual([
+      '首页',
+      '花材',
+      '场景',
+      '节日',
+      '清单',
+      '指南',
+    ])
     expect(links.map((link) => link.attributes('href'))).toEqual([
       '/',
       '/flowers/',
       '/occasions/',
+      '/festivals/',
       '/lists/',
       '/guides/',
     ])

@@ -8,6 +8,8 @@ import FlowersIndexPage from '~/pages/flowers/index.vue'
 import FlowerDetailPage from '~/pages/flowers/[slug].vue'
 import OccasionsIndexPage from '~/pages/occasions/index.vue'
 import OccasionDetailPage from '~/pages/occasions/[slug].vue'
+import FestivalsIndexPage from '~/pages/festivals/index.vue'
+import FestivalDetailPage from '~/pages/festivals/[slug].vue'
 import ListsIndexPage from '~/pages/lists/index.vue'
 import ListDetailPage from '~/pages/lists/[slug].vue'
 import GuidesIndexPage from '~/pages/guides/index.vue'
@@ -85,6 +87,27 @@ describe('场景', () => {
     expect(wrapper.findAll('.mini-flower')).toHaveLength(5)
     expect(wrapper.findAll('.criteria-list li')).toHaveLength(4)
     expect(wrapper.find('.note-box').text()).toContain('百合')
+  })
+})
+
+describe('节日', () => {
+  it('lists all six festivals with timing and booking advice', async () => {
+    const wrapper = await mountSuspended(FestivalsIndexPage)
+
+    expect(wrapper.find('h1').text()).toBe('节日送花，先算时间再算预算')
+    expect(wrapper.findAll('.scene-card')).toHaveLength(6)
+    expect(wrapper.find('.scene-meta').text()).toContain('提前')
+  })
+
+  it('renders a festival with budget tiers, flowers and FAQ', async () => {
+    const wrapper = await mountSuspended(FestivalDetailPage, { route: '/festivals/valentine/' })
+
+    expect(wrapper.find('h1').text()).toContain('情人节')
+    expect(wrapper.findAll('.budget-card')).toHaveLength(3)
+    expect(wrapper.findAll('.criteria-list li')).toHaveLength(4)
+    expect(wrapper.findAll('.mini-flower')).toHaveLength(5)
+    expect(wrapper.findAll('.faq-item')).toHaveLength(4)
+    expect(wrapper.find('.faq-list').text()).toContain('情人节的花要提前多久订')
   })
 })
 

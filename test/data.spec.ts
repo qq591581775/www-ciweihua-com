@@ -3,12 +3,13 @@ import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { flowers, getFlower } from '~/data/flowers'
 import { getOccasion, occasions } from '~/data/occasions'
-import { lists } from '~/data/lists'
-import { guides } from '~/data/guides'
+import { festivals } from '~/data/festivals'
+import { getList, lists } from '~/data/lists'
+import { getGuide, guides } from '~/data/guides'
 
 describe('内容数据', () => {
   it('has unique slugs across every section', () => {
-    for (const collection of [flowers, occasions, lists, guides]) {
+    for (const collection of [flowers, occasions, lists, guides, festivals]) {
       const slugs = collection.map((item) => item.slug)
       expect(new Set(slugs).size).toBe(slugs.length)
     }
@@ -40,6 +41,33 @@ describe('内容数据', () => {
 
     for (const guide of guides) {
       expect(guide.sections.length).toBeGreaterThan(0)
+    }
+
+    for (const festival of festivals) {
+      for (const slug of festival.flowers) {
+        expect(getFlower(slug), `festival.flowers ${slug}`).toBeTruthy()
+      }
+      for (const slug of festival.lists) {
+        expect(getList(slug), `festival.lists ${slug}`).toBeTruthy()
+      }
+      for (const slug of festival.guides) {
+        expect(getGuide(slug), `festival.guides ${slug}`).toBeTruthy()
+      }
+    }
+  })
+
+  it('keeps every festival page complete enough to rank', () => {
+    for (const festival of festivals) {
+      expect(festival.budgets).toHaveLength(3)
+      expect(festival.plan.length).toBeGreaterThanOrEqual(4)
+      expect(festival.avoid.length).toBeGreaterThanOrEqual(3)
+      expect(festival.faq.length).toBeGreaterThanOrEqual(3)
+      expect(festival.intro.length).toBeGreaterThan(40)
+      for (const item of festival.faq) {
+        expect(item.question.trim().length, `${festival.slug} question`).toBeGreaterThan(4)
+        expect(item.answer.trim().length, `${festival.slug} answer`).toBeGreaterThan(20)
+        expect(item.answer).not.toMatch(/undefined|null/)
+      }
     }
   })
 

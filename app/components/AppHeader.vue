@@ -5,6 +5,7 @@ const navItems = [
   { label: '首页', path: '/' },
   { label: '花材', path: '/flowers/' },
   { label: '场景', path: '/occasions/' },
+  { label: '节日', path: '/festivals/' },
   { label: '清单', path: '/lists/' },
   { label: '指南', path: '/guides/' },
 ]

@@ -623,6 +623,36 @@ p {
   font-size: 12.5px;
 }
 
+/* ---------- 节日预算档位 ---------- */
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.budget-card {
+  padding: 18px 18px 20px;
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-primary);
+  border-radius: 12px;
+  background: var(--color-card);
+}
+
+.budget-label {
+  margin: 0 0 4px;
+  color: var(--color-muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.budget-range {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
 /* ---------- 编辑式索引列表 ---------- */
 .index-list {
   border-top: 1px solid var(--color-border);
@@ -1466,6 +1496,7 @@ p {
   .flower-grid,
   .scene-grid,
   .mini-flower-grid,
+  .budget-grid,
   .check-columns,
   .do-list {
     grid-template-columns: 1fr;

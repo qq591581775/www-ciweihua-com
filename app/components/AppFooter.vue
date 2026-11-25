@@ -30,6 +30,7 @@ const year = new Date().getFullYear()
         <h3>栏目</h3>
         <NuxtLink to="/flowers/">花材库</NuxtLink>
         <NuxtLink to="/occasions/">场景</NuxtLink>
+        <NuxtLink to="/festivals/">节日花礼</NuxtLink>
         <NuxtLink to="/lists/">搭配清单</NuxtLink>
         <NuxtLink to="/guides/">养护指南</NuxtLink>
       </div>

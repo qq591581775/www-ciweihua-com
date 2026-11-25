@@ -37,6 +37,7 @@ npm run hooks:install
 
 - 花材库：`app/data/flowers.ts`，列表页 `app/pages/flowers/index.vue`，详情页 `app/pages/flowers/[slug].vue`。
 - 送花场景：`app/data/occasions.ts`，列表页 `app/pages/occasions/index.vue`，详情页 `app/pages/occasions/[slug].vue`。
+- 节日花礼：`app/data/festivals.ts`，列表页 `app/pages/festivals/index.vue`，详情页 `app/pages/festivals/[slug].vue`；每个节日含时间、预订节奏、三档预算、花材与 FAQ。
 - 搭配清单：`app/data/lists.ts`，列表页 `app/pages/lists/index.vue`，详情页 `app/pages/lists/[slug].vue`。
 - 养护指南：`app/data/guides.ts`，列表页 `app/pages/guides/index.vue`，详情页 `app/pages/guides/[slug].vue`。
 - 站点常量（域名、名称、邮箱）：`app/data/site.ts`。
@@ -71,7 +72,8 @@ npm run ci:local        # 手动执行
 - 每页都有 `index,follow,max-image-preview:large` 的 robots 声明，404 页单独 noindex。
 - 花材详情页用花材图作为 OG / Twitter 分享图，并带图注、`Article`、`FAQPage` 与 `BreadcrumbList` 结构化数据。
 - 花材页按字段自动生成 4 条常见问题（价格、瓶插期、挑选、送人），页面可见内容与 FAQPage 保持同一份数据。
-- 站内互链：花材页指向相关清单与养护指南，指南页回链文中提到的花材。
+- 站内互链：花材页指向相关清单与养护指南，指南页回链文中提到的花材，节日页串起花材、清单与指南。
+- 节日详情页带独立的 `keywords`、`Article`、`FAQPage` 与 `BreadcrumbList`，FAQ 覆盖「要不要提前订」「预算怎么分」「哪些花耐放」这类搜索问句。
 - `sitemap.xml` 带 `changefreq`、`priority` 与花材图片条目；`robots.txt` 带 `Host` 与 `Sitemap`。
 - `verify:dist` 会检查 robots、keywords、FAQPage 与花材分享图是否齐全。
 
