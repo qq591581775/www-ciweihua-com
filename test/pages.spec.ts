@@ -28,7 +28,7 @@ describe('首页', () => {
     expect(wrapper.findAll('.entry-card')).toHaveLength(3)
     expect(wrapper.findAll('.flower-card')).toHaveLength(6)
     expect(wrapper.findAll('.scene-card')).toHaveLength(6)
-    expect(wrapper.findAll('.index-row')).toHaveLength(8)
+    expect(wrapper.findAll('.index-row')).toHaveLength(11)
   })
 
   it('links to every main section', async () => {
@@ -130,11 +130,11 @@ describe('清单', () => {
 })
 
 describe('指南', () => {
-  it('lists all four guides', async () => {
+  it('lists all seven guides', async () => {
     const wrapper = await mountSuspended(GuidesIndexPage)
 
-    expect(wrapper.find('h1').text()).toBe('花买回家之后，才是关键')
-    expect(wrapper.findAll('.index-row')).toHaveLength(4)
+    expect(wrapper.find('h1').text()).toBe('买花、养花、送花的分寸')
+    expect(wrapper.findAll('.index-row')).toHaveLength(7)
   })
 
   it('renders guide sections and points', async () => {

@@ -3,10 +3,10 @@ import { formatGuideDate, guides } from '~/data/guides'
 import { site } from '~/data/site'
 
 usePageSeo({
-  title: '养护指南｜让鲜花多开几天的做法｜刺猬花',
-  description:
-    '刺猬花整理了 4 篇可执行的鲜花养护与选购指南：延长花期、判断新鲜度、花瓶与换水、四季花材日历。',
+  title: '指南｜养花、选购与送花礼仪｜刺猬花',
+  description: `刺猬花整理了 ${guides.length} 篇可执行的鲜花指南：延长花期、判断新鲜度、花材等级与价格、主花怎么选、送花礼仪与四季花材日历。`,
   path: '/guides/',
+  keywords: ['鲜花养护', '买花技巧', '花材等级', '送花礼仪', '鲜花指南'],
   structuredData: [
     {
       '@type': 'CollectionPage',
@@ -30,11 +30,11 @@ usePageSeo({
   <div>
     <section class="page-header">
       <div class="container">
-        <p class="eyebrow">guides · 养护指南</p>
-        <h1>花买回家之后，才是关键</h1>
+        <p class="eyebrow">guides · 指南</p>
+        <h1>买花、养花、送花的分寸</h1>
         <p class="page-intro">
-          同样一束花，有人摆三天，有人摆一周。差别通常不在花，而在剪口、水位、换水和温度这几个细节。
-          这里只写能直接执行的做法。
+          同样一束花，有人摆三天，有人摆一周；有人送得刚刚好，有人让收花的人为难。
+          这里写的是能直接执行的做法：怎么挑、怎么养、怎么送。
         </p>
       </div>
     </section>

@@ -200,8 +200,8 @@ const entries = [
         <div class="section-heading">
           <div>
             <p class="eyebrow">guides</p>
-            <h2 class="section-title">养花这件事，细节比花材重要</h2>
-            <p class="section-lead">剪口、水位、换水、温度，做好这四件事，花期能长不少。</p>
+            <h2 class="section-title">买花、养花、送花，都有判断</h2>
+            <p class="section-lead">从挑等级、养花期到怎么送出手，把容易出错的细节写清楚。</p>
           </div>
           <NuxtLink to="/guides/" class="text-link">全部指南 →</NuxtLink>
         </div>

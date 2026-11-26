@@ -39,7 +39,7 @@ npm run hooks:install
 - 送花场景：`app/data/occasions.ts`，列表页 `app/pages/occasions/index.vue`，详情页 `app/pages/occasions/[slug].vue`。
 - 节日花礼：`app/data/festivals.ts`，列表页 `app/pages/festivals/index.vue`，详情页 `app/pages/festivals/[slug].vue`；每个节日含时间、预订节奏、三档预算、花材与 FAQ。
 - 搭配清单：`app/data/lists.ts`，列表页 `app/pages/lists/index.vue`，详情页 `app/pages/lists/[slug].vue`。
-- 养护指南：`app/data/guides.ts`，列表页 `app/pages/guides/index.vue`，详情页 `app/pages/guides/[slug].vue`。
+- 指南：`app/data/guides.ts`，列表页 `app/pages/guides/index.vue`，详情页 `app/pages/guides/[slug].vue`；分养护、选购、礼仪三类，共 7 篇。
 - 站点常量（域名、名称、邮箱）：`app/data/site.ts`。
 - 花材图片放在 `public/images/flowers/<slug>.jpg`（4:5，1000×1250），页面只引用本地路径。
 

@@ -277,6 +277,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.ciweihua.com/guides/flower-grade/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ciweihua.com/guides/rose-eustoma-tulip/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ciweihua.com/guides/flower-etiquette/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.ciweihua.com/about/</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>yearly</changefreq>

@@ -80,6 +80,9 @@ const prerenderRoutes = [
   '/guides/judge-freshness/',
   '/guides/vase-and-water/',
   '/guides/seasonal-calendar/',
+  '/guides/flower-grade/',
+  '/guides/rose-eustoma-tulip/',
+  '/guides/flower-etiquette/',
   '/about/',
   '/contact/',
 ]
